@@ -1,0 +1,20 @@
+{
+  "name": "query-aware-flow-pack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/extractSkeleton.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ts-morph": "^27.0.2",
+    "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0"
+  }
+}
