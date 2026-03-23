@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/extractSkeleton.ts"
+    "dev": "tsx src/extractSkeleton.ts",
+    "match": "tsx src/matchQuery.ts"
   },
   "keywords": [],
   "author": "",
