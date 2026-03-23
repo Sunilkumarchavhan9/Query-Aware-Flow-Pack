@@ -1,0 +1,45 @@
+{
+  "query": "how are messages sent",
+  "rankedFiles": [
+    {
+      "filePath": "apps/meteor/app/lib/server/methods/sendMessage.ts",
+      "score": 59,
+      "matchedTerms": [
+        "message",
+        "send"
+      ]
+    },
+    {
+      "filePath": "apps/meteor/app/lib/server/functions/sendMessage.ts",
+      "score": 48,
+      "matchedTerms": [
+        "message",
+        "send"
+      ]
+    },
+    {
+      "filePath": "apps/meteor/app/authorization/server/functions/canSendMessage.ts",
+      "score": 34,
+      "matchedTerms": [
+        "message",
+        "send"
+      ]
+    },
+    {
+      "filePath": "apps/meteor/app/lib/server/lib/sendNotificationsOnMessage.ts",
+      "score": 32,
+      "matchedTerms": [
+        "message",
+        "send"
+      ]
+    },
+    {
+      "filePath": "apps/meteor/app/lib/server/functions/insertMessage.ts",
+      "score": 23,
+      "matchedTerms": [
+        "message",
+        "send"
+      ]
+    }
+  ]
+}

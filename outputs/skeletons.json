@@ -1,0 +1,158 @@
+[
+  {
+    "filePath": "apps/meteor/app/lib/server/methods/sendMessage.ts",
+    "imports": [
+      "@rocket.chat/core-services",
+      "@rocket.chat/core-typings",
+      "@rocket.chat/ddp-client",
+      "@rocket.chat/i18n",
+      "@rocket.chat/message-types",
+      "@rocket.chat/models",
+      "i18next",
+      "meteor/check",
+      "meteor/meteor",
+      "moment",
+      "../../../../server/lib/i18n",
+      "../../../../server/lib/logger/system",
+      "../../../authorization/server/functions/canSendMessage",
+      "../../../authorization/server/functions/hasPermission",
+      "../../../license/server/airGappedRestrictionsWrapper",
+      "../../../metrics/server",
+      "../../../settings/server",
+      "../functions/sendMessage",
+      "../lib"
+    ],
+    "exports": [
+      "executeSendMessage"
+    ],
+    "functions": [
+      {
+        "name": "executeSendMessage",
+        "signature": "export async function executeSendMessage(\r\n\tuid: IUser['_id'] | IUser,\r\n\tmessage: AtLeast<IMessage, 'rid'>,\r\n\textraInfo?:"
+      }
+    ],
+    "classes": [],
+    "interfaces": [],
+    "typeAliases": []
+  },
+  {
+    "filePath": "apps/meteor/app/lib/server/functions/sendMessage.ts",
+    "imports": [
+      "@rocket.chat/apps",
+      "@rocket.chat/core-services",
+      "@rocket.chat/core-typings",
+      "@rocket.chat/models",
+      "@rocket.chat/tools",
+      "meteor/check",
+      "../../../../lib/utils/isRelativeURL",
+      "../../../authorization/server/functions/hasPermission",
+      "../../../file-upload/server",
+      "../../../settings/server",
+      "../lib/afterSaveMessage",
+      "../lib/notifyListener",
+      "../lib/validateCustomMessageFields"
+    ],
+    "exports": [
+      "prepareMessageObject",
+      "validateMessage",
+      "sendMessage"
+    ],
+    "functions": [
+      {
+        "name": "prepareMessageObject",
+        "signature": "export function prepareMessageObject(\r\n\tmessage: Partial<IMessage>,\r\n\trid: IRoom['_id'],\r\n\tuser:"
+      }
+    ],
+    "classes": [],
+    "interfaces": [],
+    "typeAliases": [
+      "SendMessageOptions"
+    ]
+  },
+  {
+    "filePath": "apps/meteor/app/authorization/server/functions/canSendMessage.ts",
+    "imports": [
+      "@rocket.chat/core-typings",
+      "@rocket.chat/models",
+      "./canAccessRoom",
+      "./hasPermission",
+      "../../../../definition/IRoomTypeConfig",
+      "../../../../server/lib/rooms/roomCoordinator"
+    ],
+    "exports": [
+      "validateRoomMessagePermissionsAsync",
+      "canSendMessageAsync"
+    ],
+    "functions": [
+      {
+        "name": "validateRoomMessagePermissionsAsync",
+        "signature": "export async function validateRoomMessagePermissionsAsync(\r\n\troom: IRoom | null,\r\n\targs:"
+      },
+      {
+        "name": "canSendMessageAsync",
+        "signature": "export async function canSendMessageAsync(\r\n\trid: IRoom['_id'],\r\n\tuser:"
+      }
+    ],
+    "classes": [],
+    "interfaces": [],
+    "typeAliases": []
+  },
+  {
+    "filePath": "apps/meteor/app/lib/server/functions/insertMessage.ts",
+    "imports": [
+      "@rocket.chat/core-typings",
+      "@rocket.chat/models",
+      "./parseUrlsInMessage",
+      "./sendMessage"
+    ],
+    "exports": [
+      "insertMessage"
+    ],
+    "functions": [],
+    "classes": [],
+    "interfaces": [],
+    "typeAliases": []
+  },
+  {
+    "filePath": "apps/meteor/app/lib/server/lib/sendNotificationsOnMessage.ts",
+    "imports": [
+      "@rocket.chat/core-typings",
+      "@rocket.chat/models",
+      "emojione",
+      "moment",
+      "mongodb",
+      "./notifyUsersOnMessage",
+      "../../../../server/lib/callbacks",
+      "../../../../server/lib/rooms/roomCoordinator",
+      "../../../authorization/server/functions/hasPermission",
+      "../../../notification-queue/server/NotificationQueue",
+      "../../../settings/server",
+      "../functions/notifications",
+      "../functions/notifications/desktop",
+      "../functions/notifications/email",
+      "../functions/notifications/messageContainsHighlight",
+      "../functions/notifications/mobile"
+    ],
+    "exports": [
+      "sendMessageNotifications",
+      "sendAllNotifications",
+      "sendNotification"
+    ],
+    "functions": [
+      {
+        "name": "sendMessageNotifications",
+        "signature": "export async function sendMessageNotifications(message: IMessage, room: IRoom, usersInThread: string[] = [])"
+      },
+      {
+        "name": "sendAllNotifications",
+        "signature": "export async function sendAllNotifications(message: IMessage, room: IRoom)"
+      }
+    ],
+    "classes": [],
+    "interfaces": [],
+    "typeAliases": [
+      "SubscriptionAggregation",
+      "WithRequiredProperty"
+    ]
+  }
+]
