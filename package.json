@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx src/extractSkeleton.ts",
-    "match": "tsx src/matchQuery.ts"
+    "match": "tsx src/matchQuery.ts",
+    "flowpack": "tsx src/buildFlowPack.ts"
   },
   "keywords": [],
   "author": "",
