@@ -139,6 +139,7 @@ function scoreFile(file: SkeletonFile, query: string): RankedFile {
   // Exact-path boosts for the core sendMessage entry points.
   if (baseName === 'sendmessage.ts') score += 12;
   if (filePathLower.endsWith('/methods/sendmessage.ts')) score += 10;
+  if (filePathLower.endsWith('/functions/sendmessage.ts')) score += 8;
 
   if (filePathLower.includes('/methods/')) score += 2;
   if (filePathLower.includes('/functions/')) score += 2;
@@ -146,7 +147,7 @@ function scoreFile(file: SkeletonFile, query: string): RankedFile {
 
   // Authorization files should rank lower unless auth intent is explicit.
   if (filePathLower.includes('/authorization/') && !queryHasAuthIntent) {
-    score -= 4;
+    score -= 6;
   }
 
   if (fileTerms.includes('send') && fileTerms.includes('message')) {

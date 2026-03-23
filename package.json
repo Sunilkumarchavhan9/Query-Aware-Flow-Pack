@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tsx src/extractSkeleton.ts",
     "match": "tsx src/matchQuery.ts",
-    "flowpack": "tsx src/buildFlowPack.ts"
+    "flowpack": "tsx src/buildFlowPack.ts",
+    "benchmark": "tsx src/benchmark.ts"
   },
   "keywords": [],
   "author": "",

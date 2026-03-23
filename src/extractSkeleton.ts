@@ -22,7 +22,26 @@ type SkeletonFile = {
   typeAliases: string[];
 };
 
-const ROCKET_CHAT_ROOT = path.resolve('..');
+function resolveRocketChatRoot(): string {
+  const candidates = [
+    process.env.ROCKET_CHAT_ROOT,
+    path.resolve('.'),
+    path.resolve('..'),
+    path.resolve('../Rocket.Chat'),
+  ].filter((value): value is string => Boolean(value));
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(path.join(candidate, 'apps', 'meteor'))) {
+      return candidate;
+    }
+  }
+
+  throw new Error(
+    `Could not resolve Rocket.Chat root. Set ROCKET_CHAT_ROOT env var. Tried: ${candidates.join(', ')}`
+  );
+}
+
+const ROCKET_CHAT_ROOT = resolveRocketChatRoot();
 const INPUT_FILE = path.resolve('inputs/sample-files.txt');
 const OUTPUT_FILE = path.resolve('outputs/skeletons.json');
 
