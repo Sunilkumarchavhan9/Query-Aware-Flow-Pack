@@ -1,0 +1,27 @@
+{
+  "query": "how are messages sent",
+  "raw": {
+    "fileCount": 5,
+    "chars": 30169,
+    "lines": 1021,
+    "approxTokens": 7544
+  },
+  "skeletons": {
+    "fileCount": 5,
+    "chars": 4658,
+    "lines": 158,
+    "approxTokens": 1165
+  },
+  "flowpack": {
+    "fileCount": 4,
+    "chars": 5693,
+    "lines": 178,
+    "approxTokens": 1424
+  },
+  "reduction": {
+    "rawToSkeletonPercent": 84.56,
+    "rawToFlowpackPercent": 81.13,
+    "rawToSkeletonTokenPercent": 84.56,
+    "rawToFlowpackTokenPercent": 81.12
+  }
+}

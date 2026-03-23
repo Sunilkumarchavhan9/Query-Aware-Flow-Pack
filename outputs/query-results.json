@@ -11,7 +11,7 @@
     },
     {
       "filePath": "apps/meteor/app/lib/server/functions/sendMessage.ts",
-      "score": 48,
+      "score": 56,
       "matchedTerms": [
         "message",
         "send"
@@ -19,7 +19,7 @@
     },
     {
       "filePath": "apps/meteor/app/authorization/server/functions/canSendMessage.ts",
-      "score": 34,
+      "score": 32,
       "matchedTerms": [
         "message",
         "send"
