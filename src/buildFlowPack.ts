@@ -40,7 +40,7 @@ function main() {
   const skeletons: SkeletonFile[] = JSON.parse(fs.readFileSync(SKELETONS_FILE, 'utf8'));
   const queryResults: QueryResults = JSON.parse(fs.readFileSync(QUERY_RESULTS_FILE, 'utf8'));
 
-  const topFiles = queryResults.rankedFiles.filter((file) => file.score > 0).slice(0, 3);
+  const topFiles = queryResults.rankedFiles.filter((file) => file.score > 0).slice(0, 4);
 
   const selectedSkeletons = topFiles.map((ranked) => {
     const skeleton = skeletons.find((s) => s.filePath === ranked.filePath);
