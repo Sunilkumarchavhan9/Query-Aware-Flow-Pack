@@ -1,0 +1,5 @@
+apps/meteor/app/lib/server/methods/sendMessage.ts
+apps/meteor/app/lib/server/functions/sendMessage.ts
+apps/meteor/app/authorization/server/functions/canSendMessage.ts
+apps/meteor/app/lib/server/functions/insertMessage.ts
+apps/meteor/app/lib/server/lib/sendNotificationsOnMessage.ts
