@@ -24,12 +24,20 @@ type SkeletonFile = {
 type RankedFile = {
   filePath: string;
   score: number;
-  matchedTerms: string[];
 };
 
 type QueryResults = {
   query: string;
   rankedFiles: RankedFile[];
+};
+
+type FlowPackFile = {
+  filePath: string;
+  score: number;
+  imports: string[];
+  exports: string[];
+  functions: FunctionInfo[];
+  classes: ClassInfo[];
 };
 
 const SKELETONS_FILE = path.resolve('outputs/skeletons.json');
@@ -42,20 +50,28 @@ function main() {
 
   const topFiles = queryResults.rankedFiles.filter((file) => file.score > 0).slice(0, 4);
 
-  const selectedSkeletons = topFiles.map((ranked) => {
+  const files: FlowPackFile[] = topFiles
+    .map((ranked) => {
     const skeleton = skeletons.find((s) => s.filePath === ranked.filePath);
+    if (!skeleton) {
+      return null;
+    }
+
     return {
       filePath: ranked.filePath,
       score: ranked.score,
-      matchedTerms: ranked.matchedTerms,
-      skeleton,
+      imports: skeleton.imports,
+      exports: skeleton.exports,
+      functions: skeleton.functions,
+      classes: skeleton.classes,
     };
-  });
+    })
+    .filter((file): file is FlowPackFile => file !== null);
 
   const flowPack = {
     query: queryResults.query,
-    selectedCount: selectedSkeletons.length,
-    files: selectedSkeletons,
+    selectedCount: files.length,
+    files,
   };
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(flowPack, null, 2), 'utf8');

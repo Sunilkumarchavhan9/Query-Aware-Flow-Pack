@@ -14,14 +14,14 @@
   },
   "flowpack": {
     "fileCount": 4,
-    "chars": 5693,
-    "lines": 178,
-    "approxTokens": 1424
+    "chars": 4432,
+    "lines": 137,
+    "approxTokens": 1108
   },
   "reduction": {
     "rawToSkeletonPercent": 84.56,
-    "rawToFlowpackPercent": 81.13,
+    "rawToFlowpackPercent": 85.31,
     "rawToSkeletonTokenPercent": 84.56,
-    "rawToFlowpackTokenPercent": 81.12
+    "rawToFlowpackTokenPercent": 85.31
   }
 }
